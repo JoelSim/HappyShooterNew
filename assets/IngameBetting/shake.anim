@@ -1,0 +1,40 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "shake",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.5,
+  "sample": 60,
+  "speed": 2,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "x": []
+    },
+    "paths": {
+      "New Node": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": -35
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 35
+            },
+            {
+              "frame": 0.5,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

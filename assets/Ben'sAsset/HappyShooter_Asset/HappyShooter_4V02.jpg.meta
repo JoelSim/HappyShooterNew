@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "b1cfe9c7-60a0-4ff8-83fd-9b690203ed55",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 1920,
+  "platformSettings": {},
+  "subMetas": {
+    "HappyShooter_4V02": {
+      "ver": "1.0.4",
+      "uuid": "6ad88225-7b0d-4f0e-9e48-d2069e34ed01",
+      "rawTextureUuid": "b1cfe9c7-60a0-4ff8-83fd-9b690203ed55",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 1920,
+      "rawWidth": 1080,
+      "rawHeight": 1920,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

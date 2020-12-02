@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "yippi_fail",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.06666666666666667,
+  "sample": 60,
+  "speed": 0.15,
+  "wrapMode": 2,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "0b9b0050-2294-4045-86ef-9035f3f6e27a"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "68256704-c381-46d1-a224-91a1cfb22df4"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "4143a8e4-0579-4fe9-b95b-afcb17648033"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "1e5e562c-712f-43b6-913b-b6daab15f4ad"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,55 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pandaShoot",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.1,
+  "sample": 60,
+  "speed": 0.15,
+  "wrapMode": 1,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "386bb91a-a655-4c39-8603-078f4fb1ba9d"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "cb1a67f3-7967-4a50-96fa-f22e91fd0ba3"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "eb37c7cd-041a-4387-962c-8f1ef025964f"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "7576a7b6-0a77-4261-bb91-563e7bf381b3"
+            }
+          },
+          {
+            "frame": 0.06666666666666667,
+            "value": {
+              "__uuid__": "36d2ca2b-354d-4175-a60d-8e98b6961ce1"
+            }
+          },
+          {
+            "frame": 0.08333333333333333,
+            "value": {
+              "__uuid__": "a10c856a-f77e-4823-ae82-b41c4449a2f6"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}

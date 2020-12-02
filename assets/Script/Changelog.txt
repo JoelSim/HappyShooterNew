@@ -1,0 +1,76 @@
+v1.0
+############################################################################
+1). First version of survival mode bubble shooter.
+2). Added in Score system, 100 points for each popped bubble.
+3). Added in switch bubble function.
+4). Added in restart function after game over.
+5). No sound effect yet.
+6). Aiming line unable to bend yet.
+
+v1.1
+############################################################################
+1). Fixed a bug where sometimes the bubbles will placed in wrong position.
+2). Added in level selection scene.
+3). Added in 20 level.
+4). Added in panda to rescue.
+5). Added in start scene.
+6). Added in winning condition and calculation for 1star, 2star and 3star.
+7). Added in pause.
+8). Added in explosion effect when bubbles is destroyed.
+9). Added in sound control.
+10). Added in version in start scene.
+
+v1.2
+############################################################################
+1). Rework all sounds and music.
+2). Rework panda animation.
+3). Added in button clicking sound for all button click. 
+4). Added in effect when user touch and hold at screen to indicated bubble is getting ready to be shooted.
+5). Added in cheering sound and panda dance when user manage to win the level.
+6). Added in another 20 level. Total with 40 level now.
+7). Speed up the bubble bursting effect.
+
+v1.3
+############################################################################
+1). Added in coin system.
+2). Added in function where all stage are now locked until you cleared the previous stage.
+3). Fixed an issue with game not ending when bubbles is overflowed.
+4). Fixed an issue where bubble sometimes still floating.
+
+v1.4
+############################################################################
+1). Game now will start at top of the game level, then it will adjusted to the point where player can start playing.
+2). Game will now move the bubbles when there is 10 rows or less until there is 13 rows on screen or till the end of the row.
+3). Added in another 10 levels so now it will become 50 levels.
+4). Added in coins feature where user can now use coin to purchase extra bubbles, user will earn 5 coins for each star they earned.
+5). Fixed a bugs where after game over, clicking the screen will close the game over result.
+6). Added in animation when user getting new bubbles/switch bubbles.
+7). Level Balancing.
+
+v1.5
+############################################################################
+1). Fixed a bug where user can go to next stage even if they not yet clear current stage.
+2). Fixed a bug where game wont end even user hit the game over state.
+3). Fixed a bug where sometimes the ball will still disappear.
+
+v1.6
+############################################################################
+1). Fixed some panda being not able to shoot down.
+2). Fixed sometimes bubble will missing in certain angle.
+3). Fixed sometimes bubble will stuck mid air.
+4). Level Balancing on 38, 40 and 48.
+5). Fixed sometimes bubble can be snap even the color is difference.
+6). Integrated new graphics.
+
+v1.7
+############################################################################
+1). Fixed bubbles dissappear issues.
+2). Added in indicator to let user know how many points to get 3 star.
+3). Adjusted requirement so it will be easier to let user obtain 3 star.
+4). Added in more bubbles for some level.
+5). Added in a sound effect when star is collected.
+
+v1.8
+############################################################################
+1). Level Balancing on 23.
+2). Added in tutorial.

@@ -1,0 +1,59 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "CamaraShake",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.25,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 0,
+  "curveData": {
+    "props": {
+      "x": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.06666666666666667,
+          "value": -57.144
+        },
+        {
+          "frame": 0.13333333333333333,
+          "value": 65.716
+        },
+        {
+          "frame": 0.2,
+          "value": -31.429
+        },
+        {
+          "frame": 0.25,
+          "value": 0
+        }
+      ],
+      "y": [
+        {
+          "frame": 0,
+          "value": 0
+        },
+        {
+          "frame": 0.06666666666666667,
+          "value": 17.143
+        },
+        {
+          "frame": 0.13333333333333333,
+          "value": -2.857
+        },
+        {
+          "frame": 0.2,
+          "value": 8.572
+        },
+        {
+          "frame": 0.25,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "events": []
+}
