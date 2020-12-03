@@ -251,8 +251,10 @@ cc.Class({
                             'user_id': globalData.settings.user_id,
                             'api_url':globalData.api_url,
                             'changeBet':true,
-
                         };
+                        if(globalData.isEncrypt){
+                            emit_result = btoa(JSON.stringify(emit_result));
+                        }
                         globalData.getSocket().emit('send-result', emit_result);
                         this.generatingBalance = true;
                     }
@@ -280,7 +282,9 @@ cc.Class({
                             'api_url':globalData.api_url,
                             "requestType": "bet",
                         }
-
+                        if(globalData.isEncrypt){
+                            emit_obj = btoa(JSON.stringify(emit_obj));
+                        }
                         globalData.getSocket().emit('changeBet', emit_obj);
                         this.updateSlotAmount();
                         this.mainGame.getComponent("MainScene").generateScore2(false);
@@ -378,8 +382,10 @@ cc.Class({
                         'user_id': globalData.settings.user_id,
                         'api_url':globalData.api_url,
                         'changeBet':true,
-
                     };
+                    if(globalData.isEncrypt){
+                        emit_result = btoa(JSON.stringify(emit_result));
+                    }
                     globalData.getSocket().emit('send-result', emit_result);
                 }
                 else{
@@ -437,6 +443,9 @@ cc.Class({
 
             };
             if (this.mainGame.getComponent("MainScene").selfClickEnd) {
+                if(globalData.isEncrypt){
+                    emit_result = btoa(JSON.stringify(emit_result));
+                }
                 globalData.getSocket().emit('send-result', emit_result);
             }
         } 
@@ -466,11 +475,10 @@ cc.Class({
                         'api_url':globalData.api_url,
                         "requestType": "social_addon",
                         'ticket_id': globalData.ticket_id,
-
-
-
                     }
-        
+                    if(globalData.isEncrypt){
+                        emit_obj = btoa(JSON.stringify(emit_obj));
+                    }
                     globalData.getSocket().emit('changeBet', emit_obj);
                     this.updateSlotAmount();
                     this.mainGame.getComponent("MainScene").generateScore2(false);

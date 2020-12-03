@@ -1626,7 +1626,9 @@ cc.Class({
                         'changeBet':false,
 
                     };
-
+                    if(globalData.isEncrypt){
+                        emit_result = btoa(JSON.stringify(emit_result));
+                    }
                     globalData.getSocket().emit('send-result', emit_result);
                     this.generatingBalance = true;
 
@@ -1693,7 +1695,9 @@ cc.Class({
             cc.log(globalData.ticket_id);
             cc.log(globalData.game_code);
             cc.log(globalData.settings.user_id);
-
+            if(globalData.isEncrypt){
+                emit_result = btoa(JSON.stringify(emit_result));
+            }
             globalData.getSocket().emit('send-result', emit_result);
         }
         else{
@@ -2662,6 +2666,9 @@ cc.Class({
 
                         if( this.gamestate !=constant.getGameStates("gameover"))
                         {
+                            if(globalData.isEncrypt){
+                                emit_obj = btoa(JSON.stringify(emit_obj));
+                            }
                             globalData.getSocket().emit('changeBet', emit_obj);
                             this.generateScore2(true);
                         }

@@ -34,6 +34,26 @@ cc.Class({
         }
     },
 
+    //#region Encryption
+    decode(data){
+        // convert from base64 and return object in string
+        return atob(data);
+    },
+
+    encode(data){
+        // convert string object to base64 string and return the string
+        return btoa(data);
+    },
+
+    socketReceiveAction(data){
+        if(global.isEncrypt){
+            return JSON.parse(this.decode(data));
+        }
+        else{
+            return data;
+        }
+    },
+
     isParsable : function (input) {
         try {
             JSON.parse(input);
@@ -50,6 +70,7 @@ cc.Class({
             return data;
         }
     },
+    //#endregion
 
     connectSocket: function(data){
         cc.log("--------- Connecting Socket ----------------");
@@ -116,8 +137,8 @@ cc.Class({
         cc.log("Listen Event");
         var self = this;
         global.getSocket().on('balance', function(data){
-            // data = self.parseDataFormat(data);
-            // var resp = data;
+            data = self.socketReceiveAction(data);
+
             global.settings.balance = data.after_balance;
             global.finishGetBalance = true;
         });
@@ -131,11 +152,19 @@ cc.Class({
         });
 
         global.getSocket().on('getResult', function(data){
+            data = self.socketReceiveAction(data);
             global.ticket_id = data.ticket_id;
             global.settings.balance = data.balance;
             global.maxWin = data.score;
             global.jackpot = data.jackpot;
             global.finishGetData = true;
+        });
+
+        global.getSocket().on("cheat",function(data){
+            data = self.socketReceiveAction(data);
+            
+            global.errorMessage = data.error;
+            global.playerBalance = data.after_balance;
         });
 
         global.getSocket().on('onSubscribeDone', function(data){
@@ -151,20 +180,6 @@ cc.Class({
             }else{
                 // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
             }
-        })
-
-        global.getSocket().on("onResult", function(data){
-            data = self.parseDataFormat(data);
-            var resp = ecrypt.decrypt(data);
-            resp = self.parseDataFormat(resp);
-            cc.log(resp);
-            if(resp.status_code == 0){
-                //global.setBalance(resp.data.trial_remain);
-               // self.getComponent("uiController").updateUserData(resp.data.total_score, global.getBalance(), resp.data.total_trial);
-            }else{
-              // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
-            }
-            // self.getComponent("uiController").updatePointEarn(resp.data.total_score)
         });
 
         global.getSocket().on('kick-user-maintenance', function(data){

@@ -45,6 +45,8 @@ export var settings = {
 export var game_code = 26;
 
 export var ticket_id = -1;
+export var errorMessage = "";
+export var isEncrypt = true;
 
 var socket = null;
 export function getSocket(){
