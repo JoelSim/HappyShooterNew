@@ -2,7 +2,6 @@ import * as global from "GlobalVar";
 import * as constant from "Constant";
 import * as globalData from "GlobalData";
 import * as gameLibUtils from "GameLibUtils";
-import { triggerAsyncId } from "async_hooks";
 
 cc.Class({
     extends: cc.Component,
