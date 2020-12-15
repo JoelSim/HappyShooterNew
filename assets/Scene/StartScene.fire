@@ -228,7 +228,7 @@
       "array": [
         0,
         0,
-        511.82101363660325,
+        530.8616887095878,
         0,
         0,
         0,
@@ -2429,8 +2429,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "x0.5",
-    "_N$string": "x0.5",
+    "_string": "x1",
+    "_N$string": "x1",
     "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": false,

@@ -216,7 +216,7 @@
       "array": [
         0,
         0,
-        536.9357503463519,
+        537.2605098727712,
         0,
         0,
         0,
@@ -13296,8 +13296,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "Oops, you can't change Bet Amount when we are about to BOOM Or Shooting\n",
-    "_N$string": "Oops, you can't change Bet Amount when we are about to BOOM Or Shooting\n",
+    "_string": "Oops, you can't change Bet Amount when we are about to BOOM Or Preparing\n",
+    "_N$string": "Oops, you can't change Bet Amount when we are about to BOOM Or Preparing\n",
     "_fontSize": 35,
     "_lineHeight": 90,
     "_enableWrapText": true,
@@ -18761,8 +18761,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "x0.5",
-    "_N$string": "x0.5",
+    "_string": "x1",
+    "_N$string": "x1",
     "_fontSize": 38.60000000000001,
     "_lineHeight": 40,
     "_enableWrapText": false,

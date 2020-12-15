@@ -182,7 +182,7 @@ cc.Class({
         // this.maintBetOption = this.mainBetSelection.getComponent("BetSelection").selectedBetOption;
         this.maintBetOption = globalData.getBetSelection();
         if (this.maintBetOption == 0) {
-            this.myValue = 0.5;
+            this.myValue = 1;
         }
         if (this.maintBetOption == 1) {
             this.myValue = 5;
