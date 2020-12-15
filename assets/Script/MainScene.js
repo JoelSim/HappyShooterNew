@@ -489,7 +489,7 @@ cc.Class({
 
             onTouchBegan: function (touch, event) {
                 //self.graphic_line.clear();
-                self.timerCount = 0;
+                // self.timerCount = 0;
                 if (self.gamestate == constant.getGameStates("ready")) {
 
                     for (var i = 0; i < 10; i++) {
@@ -581,7 +581,7 @@ cc.Class({
             },
             onTouchEnded: function (touch, event) {
                 self.graphic_line.clear();
-                self.timerCount = 0;
+                // self.timerCount = 0;
                 cc.log("MOUSE RELEASE HERE");
                 cc.log("self.gamestate = " + self.gamestate)
 
@@ -2597,26 +2597,26 @@ cc.Class({
 
 
         if (!this.isPausing) {
-            if (!this.isGenerating) {
-                this.timerCount += dt;
-            }
-            this.timerLabel.string = 15 - parseInt(this.timerCount);
-            if (this.timerCount >= 10) {
-                if (globalData.settings.balance >= this.inGameBetting.getComponent("InGameBetting").currentBetting) {
-                    this.timerObject.active = true;
-                }
-                else {
-                    this.timerObject.active = false;
+            // if (!this.isGenerating) {
+            //     this.timerCount += dt;
+            // }
+            // this.timerLabel.string = 15 - parseInt(this.timerCount);
+            // if (this.timerCount >= 10) {
+            //     if (globalData.settings.balance >= this.inGameBetting.getComponent("InGameBetting").currentBetting) {
+            //         this.timerObject.active = true;
+            //     }
+            //     else {
+            //         this.timerObject.active = false;
 
-                }
-                if (this.timerCount >= 15) {
-                    this.timerCount = 0;
-                    this.autoShoot();
-                }
-            } else {
+            //     }
+            //     if (this.timerCount >= 15) {
+            //         this.timerCount = 0;
+            //         this.autoShoot();
+            //     }
+            // } else {
                 this.timerObject.active = false;
 
-            }
+            // }
         }
 
 
