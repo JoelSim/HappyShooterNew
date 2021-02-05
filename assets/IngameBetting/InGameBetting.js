@@ -251,6 +251,7 @@ cc.Class({
                             'user_id': globalData.settings.user_id,
                             'api_url':globalData.api_url,
                             'changeBet':true,
+                            'is_refund':1,
                         };
                         if(globalData.isEncrypt){
                             emit_result = btoa(JSON.stringify(emit_result));
@@ -382,6 +383,7 @@ cc.Class({
                         'user_id': globalData.settings.user_id,
                         'api_url':globalData.api_url,
                         'changeBet':true,
+                        'is_refund':1,
                     };
                     if(globalData.isEncrypt){
                         emit_result = btoa(JSON.stringify(emit_result));
@@ -440,7 +442,7 @@ cc.Class({
                 'user_id': globalData.settings.user_id,
                 'api_url':globalData.api_url,
                 'changeBet':true,
-
+                'is_refund': 1,
             };
             if (this.mainGame.getComponent("MainScene").selfClickEnd) {
                 if(globalData.isEncrypt){

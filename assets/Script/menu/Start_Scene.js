@@ -96,13 +96,13 @@ cc.Class({
     },
 
     start () {
-        if(cc.sys.isMobile){
-            cc.view.resizeWithBrowserSize(true);
-            cc.view.setDesignResolutionSize(1080, 1920, cc.ResolutionPolicy.EXACT_FIT);
-        }else{
-            this.node.getComponent(cc.Canvas).fitHeight = true;
-            this.node.getComponent(cc.Canvas).fitWidth = true;
-        }
+        // if(cc.sys.isMobile){
+        //     cc.view.resizeWithBrowserSize(true);
+        //     cc.view.setDesignResolutionSize(1080, 1920, cc.ResolutionPolicy.EXACT_FIT);
+        // }else{
+        //     this.node.getComponent(cc.Canvas).fitHeight = true;
+        //     this.node.getComponent(cc.Canvas).fitWidth = true;
+        // }
         var self = this;
         // this.musicBG =null;
         cc.loader.loadRes("Audio/start_button_click", function(err,audio){
@@ -218,7 +218,11 @@ cc.Class({
     },
     
     closeGame(){
-        window.location.href=global.settings.lobby_url;
+        if (global.settings.lobby_url != null && global.settings.lobby_url != "") {
+            window.open(global.settings.lobby_url, "_self");
+        } else {
+            window.open("about:blank", "_self");
+        }
     },
 
     // update (dt) {

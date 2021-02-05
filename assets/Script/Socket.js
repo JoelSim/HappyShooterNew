@@ -119,7 +119,6 @@ cc.Class({
             cc.log("Socket Connected");
             cc.log('check 2', global.getSocket().connected);
             var emit_obj = {
-                
             };
 
             // emit_obj = ecrypt.encrypt(JSON.stringify(emit_obj));
