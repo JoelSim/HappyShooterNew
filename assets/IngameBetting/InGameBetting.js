@@ -122,8 +122,6 @@ cc.Class({
             this.valueOnHold = Number(value);
             this.valueToConfirm=0;
         }
-       
-
     },
 
     openCannotChange(){
@@ -148,7 +146,6 @@ cc.Class({
             this.SetAmount(0);
             this.mainGame.getComponent("MainScene").resumeFunction();
             this.mainGame.getComponent("MainScene").playBetSound();
-
         }
         else{
             this.selectBetOption(this.valueOnHold);
@@ -231,11 +228,9 @@ cc.Class({
        // this.lastBetting = this.currentBetting;
 
         if (this.lastBetting != this.currentBetting) {
-
             if (globalData.settings.balance + this.lastBetting >= this.currentBetting) {
                 this.currentBettingLabel.string = this.currentBetting;
                 //eligible for betting;
-                this.lastBetting = this.currentBetting;
                 this.loadingLayer.opacity=255;
                 this.loadingLayer.active=true;
                 if (value == 0) {
@@ -266,7 +261,6 @@ cc.Class({
                     this.mainGame.getComponent("MainScene").resetAWB();
 
                 }
-               
                 else{
                     this.insufficient.active = false;
                     this.loadingLayer.active=true;
@@ -298,6 +292,7 @@ cc.Class({
                         this.mainGame.getComponent("MainScene").canShootBall = true;
                     }
                 }
+                this.lastBetting = this.currentBetting;
             }
             else {
                 this.insufficient.active = true;
