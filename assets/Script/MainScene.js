@@ -666,7 +666,7 @@ cc.Class({
             tilewidth: 86,  // Visual width of a tile
             tileheight: 86, // Visual height of a tile
             rowheight: 78,  // Height of a row
-            radius: 42,     // Bubble collision radius
+            radius: 40,     // Bubble collision radius
             tiles: []       // The two-dimensional tile array
         };
 
@@ -2583,7 +2583,7 @@ cc.Class({
                     //help change to using cocos collision to detect collision
                     // Check for intersections
                     var coord = this.getTileCoordinate(i, j);
-                    if (this.circleIntersection(this.player.bubbleNode.x, this.player.bubbleNode.y, this.level.radius,
+                    if (this.circleIntersection(this.player.bubbleNode.x, this.player.bubbleNode.y, this.level.radius-3,
                         coord.tilex, coord.tiley, this.level.radius)) {
 
                         cc.log("player bubble", this.player.bubbleNode.x, this.player.bubbleNode.y);
