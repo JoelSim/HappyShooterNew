@@ -281,8 +281,15 @@ cc.Class({
         changeColorLayer:{
             default: null,
             type: cc.Node
-        }
-
+        },
+        message:{
+			default:null,
+			type:cc.Label
+		},
+        prompt:{
+            default:null,
+            type:cc.Node
+        },
     },
 
     openChangeColor(){
@@ -2497,6 +2504,10 @@ cc.Class({
 
     // called every frame, uncomment this function to activate update callback
     update: function (dt) {
+        if(globalData.isKicked){
+			this.message.string = globalData.kickMessage;
+            this.prompt.active = true;
+		}
         this.physicCollider.x = -581.098;
         this.physicCollider2.x = 585.537;
 

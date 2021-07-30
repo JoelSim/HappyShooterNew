@@ -47,6 +47,8 @@ export var game_code = 26;
 export var ticket_id = -1;
 export var errorMessage = "";
 export var isEncrypt = true;
+export var isKicked = false;
+export var kickMessage = "";
 
 var socket = null;
 export function getSocket(){

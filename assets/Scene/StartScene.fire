@@ -13958,6 +13958,20 @@
     "sureToExit": {
       "__id__": 263
     },
+    "message": {
+      "__id__": 249
+    },
+    "prompt": {
+      "__id__": 245
+    },
+    "errorButtons": [
+      {
+        "__id__": 250
+      },
+      {
+        "__id__": 256
+      }
+    ],
     "_id": "c3TGULOu9AxbmVDW9vbxWR"
   },
   {
