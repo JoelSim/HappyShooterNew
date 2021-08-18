@@ -1,9 +1,10 @@
-var version = "v2.0.11";
+var version = "v2.0.12";
 var defaultSpeed = 0.5;
 var defaultDistance = 1000;
 
 
-var socketURL = "https://st-socket-dsocial.slot28.com";
+export var socketURL = "https://st-socket-dsocial.slot28.com";
+export var prodSocketURL = "https://socket-dsocial.slot28.com";
 // export var gameSocketURL = "socket-dsocial.velachip.com/game";
 // export var gameSocketURL = "https://st-socket-dsocial.slot28.com/game";
 
