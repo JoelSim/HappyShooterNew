@@ -52,7 +52,19 @@ cc.Class({
         sureToExit:{
             default:null,
             type:cc.Node,
-        }
+        },
+        message:{
+			default:null,
+			type:cc.Label
+		},
+        prompt:{
+            default:null,
+            type:cc.Node
+        },
+        errorButtons:{
+            default:[],
+            type:[cc.Node],
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -225,7 +237,12 @@ cc.Class({
         }
     },
 
-    // update (dt) {
-
-    // },
+    update (dt) {
+        if(global.isKicked){
+            this.errorButtons[0].active = false;
+            this.errorButtons[1].active = true;
+			this.message.string = global.kickMessage;
+            this.prompt.active = true;
+		}
+    },
 });
