@@ -9,6 +9,7 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 import * as gameLib from "GameLibUtils";
 import * as global from "GlobalData";
+import * as constant from "Constant";
 
 cc.Class({
 	extends: cc.Component,
@@ -86,7 +87,10 @@ cc.Class({
 						var parsed = JSON.parse(response);
 		
 						global.settings = parsed.data;
-					
+						constant.socketURL = global.settings.socket_url;
+						if(!global.getSocket()){
+							self.getComponent("Socket").connectSocket();
+						}
 					}
 				
 				};
@@ -129,7 +133,10 @@ cc.Class({
 	
 					global.settings = parsed.data;
 					// global.setSettings(parsed.data);
-							
+					constant.socketURL = global.settings.socket_url;
+					if(!global.getSocket()){
+						self.getComponent("Socket").connectSocket();
+					}
 					if(global.settings==undefined){
 						self.errorLayer.active = true;
 						self.errorLabel.string = parsed.error.message;
