@@ -1,4 +1,4 @@
-import * as ecryptContoller from 'ecrypt_New';
+import * as ecryptContoller from 'ecrypt';
 var global = require("GlobalData");
 import * as constant from "Constant";
 
