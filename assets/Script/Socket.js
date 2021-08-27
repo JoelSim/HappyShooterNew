@@ -1,6 +1,6 @@
 import * as global from "GlobalData";
 import * as constant from "Constant";
-import * as ecrypt from "ecrypt";
+// import * as ecrypt from "ecrypt";
 
 cc.Class({
     extends: cc.Component,
@@ -167,27 +167,27 @@ cc.Class({
         });
 
         global.getSocket().on('onSubscribeDone', function(data){
-            data = self.parseDataFormat(data);
-            var resp = ecrypt.decrypt(data);
-            resp = self.parseDataFormat(resp);
-            // cc.log(resp.data.session_id);
-            if(resp.status_code == 0){
-                global.setSessionId(resp.data.session_id);
-                //global.setBalance(resp.data.trial_remain);
-                // self.getComponent("uiController").hideErrorMessage();
-                // self.getComponent("uiController").setGameRdy();
-            }else{
-                // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
-            }
+            // data = self.parseDataFormat(data);
+            // var resp = ecrypt.decrypt(data);
+            // resp = self.parseDataFormat(resp);
+            // // cc.log(resp.data.session_id);
+            // if(resp.status_code == 0){
+            //     global.setSessionId(resp.data.session_id);
+            //     //global.setBalance(resp.data.trial_remain);
+            //     // self.getComponent("uiController").hideErrorMessage();
+            //     // self.getComponent("uiController").setGameRdy();
+            // }else{
+            //     // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
+            // }
         });
 
         global.getSocket().on('kick-user-maintenance', function(data){
+            // // data = self.parseDataFormat(data);
+            // // var resp = data;
             // data = self.parseDataFormat(data);
-            // var resp = data;
-            data = self.parseDataFormat(data);
-            var resp = ecrypt.decrypt(data);
-            resp = self.parseDataFormat(resp);
-            cc.log(resp);
+            // var resp = ecrypt.decrypt(data);
+            // resp = self.parseDataFormat(resp);
+            // cc.log(resp);
 
             // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
         });
