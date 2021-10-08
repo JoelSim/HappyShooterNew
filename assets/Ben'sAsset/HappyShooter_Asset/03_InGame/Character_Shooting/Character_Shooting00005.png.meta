@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "92ad5368-fd5a-4004-8a18-cb5792eb62ee",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "Character_Shooting00005": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "0fd6d403-9961-408d-bd21-6d8252128346",
+      "importer": "sprite-frame",
       "rawTextureUuid": "92ad5368-fd5a-4004-8a18-cb5792eb62ee",
       "trimType": "custom",
       "trimThreshold": 1,

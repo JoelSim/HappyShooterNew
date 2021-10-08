@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "90045bf5-9131-43f7-9e1f-6dd13e404ccc",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "png-tick-png-green-tick-png-file-570": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "c14c2e99-5bdc-4e66-a8dd-9039c0288cc2",
+      "importer": "sprite-frame",
       "rawTextureUuid": "90045bf5-9131-43f7-9e1f-6dd13e404ccc",
       "trimType": "auto",
       "trimThreshold": 1,

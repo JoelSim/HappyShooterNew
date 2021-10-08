@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "bc3982ce-8233-4cf8-a1bd-054ba3fc031d",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "HappyShooter_2": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "4991b034-bb29-4a82-adf7-e415ac6116d2",
+      "importer": "sprite-frame",
       "rawTextureUuid": "bc3982ce-8233-4cf8-a1bd-054ba3fc031d",
       "trimType": "auto",
       "trimThreshold": 1,

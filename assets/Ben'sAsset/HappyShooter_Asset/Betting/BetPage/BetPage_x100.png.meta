@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "6699ac54-7a4b-4269-9920-31daeb8dbe37",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "BetPage_x100": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "5dbf25e8-d98e-4beb-9b31-f2308b241103",
+      "importer": "sprite-frame",
       "rawTextureUuid": "6699ac54-7a4b-4269-9920-31daeb8dbe37",
       "trimType": "auto",
       "trimThreshold": 1,

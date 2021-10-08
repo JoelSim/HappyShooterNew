@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "4c1d938f-8fd6-4c80-aa1d-875fa2f8f87a",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "Exit Popup Mockup": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "350f4030-9b42-4dd3-ac9f-8fafd2e14bbd",
+      "importer": "sprite-frame",
       "rawTextureUuid": "4c1d938f-8fd6-4c80-aa1d-875fa2f8f87a",
       "trimType": "auto",
       "trimThreshold": 1,

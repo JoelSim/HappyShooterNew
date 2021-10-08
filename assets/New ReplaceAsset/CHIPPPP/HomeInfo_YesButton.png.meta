@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "57b837e1-8d1c-4fd8-858d-d332a11523b4",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "HomeInfo_YesButton": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "458ce597-97c9-435a-8083-9e3c57a19a29",
+      "importer": "sprite-frame",
       "rawTextureUuid": "57b837e1-8d1c-4fd8-858d-d332a11523b4",
       "trimType": "auto",
       "trimThreshold": 1,

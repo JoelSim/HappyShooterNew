@@ -11,7 +11,9 @@
   ],
   "design-resolution-height": 640,
   "design-resolution-width": 960,
-  "excluded-modules": [],
+  "excluded-modules": [
+    "SafeArea"
+  ],
   "fit-height": true,
   "fit-width": false,
   "group-list": [
@@ -37,5 +39,8 @@
     "live": {
       "enable": false
     }
-  }
+  },
+  "migrate-history": [
+    "cloud-function"
+  ]
 }

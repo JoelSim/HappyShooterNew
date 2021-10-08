@@ -1,6 +1,7 @@
 {
-  "ver": "1.2.4",
+  "ver": "1.2.6",
   "uuid": "ca01534c-ed50-45e2-a32d-6edfdc857e54",
+  "importer": "sprite-atlas",
   "size": {
     "width": 795,
     "height": 1400
@@ -8,8 +9,9 @@
   "type": "Texture Packer",
   "subMetas": {
     "panda_hold_ball_01.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "5421c526-a0a0-4ad8-93ec-79c04e8d55fd",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -29,8 +31,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_02.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "ad81cf56-06d7-43d2-8419-5b3303c0ad85",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -50,8 +53,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_03.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "f3c23f9e-608b-4bfd-865c-c4fd6d23d1f7",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -71,8 +75,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_04.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "97fde043-ab89-41b3-8d60-672007663cc3",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -92,8 +97,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_05.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "3d70ba5d-f47b-4062-887f-9939fd783db4",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -113,8 +119,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_06.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "0a1d4b4a-4bcf-4053-8f3c-7ec8e53c5ad9",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -134,8 +141,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_07.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "51c62f97-df3f-46ab-a093-2e61df971d3f",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -155,8 +163,9 @@
       "subMetas": {}
     },
     "panda_hold_ball_08.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "48d73cfc-430e-42e9-9b5d-d727b4c99453",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -176,8 +185,9 @@
       "subMetas": {}
     },
     "panda_idle_01.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "a35efc80-8f0b-4cb7-a087-c053563e02cb",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -197,8 +207,9 @@
       "subMetas": {}
     },
     "panda_idle_02.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "2bb073be-b47d-4fc9-9bfe-e227bd14b19f",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -218,8 +229,9 @@
       "subMetas": {}
     },
     "panda_idle_03.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "47c702fc-8311-4f86-a1c0-dec8a427af02",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,
@@ -239,8 +251,9 @@
       "subMetas": {}
     },
     "panda_idle_04.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "3454ed15-c29c-40a6-a742-d0a838b8a4e5",
+      "importer": "sprite-frame",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

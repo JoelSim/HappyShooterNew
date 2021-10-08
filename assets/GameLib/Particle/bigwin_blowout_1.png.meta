@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "55b73298-6ba5-475b-b2df-73703db996d5",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "bigwin_blowout_1": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "cbdba1d1-7197-4152-9bef-6682adba34b5",
+      "importer": "sprite-frame",
       "rawTextureUuid": "55b73298-6ba5-475b-b2df-73703db996d5",
       "trimType": "auto",
       "trimThreshold": 1,

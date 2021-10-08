@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "5f9345ac-9627-4aec-9f06-802fc0706e36",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "LoadingBar_effect": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "da27d4c0-f07b-4c12-a7e9-2797f05d7a5a",
+      "importer": "sprite-frame",
       "rawTextureUuid": "5f9345ac-9627-4aec-9f06-802fc0706e36",
       "trimType": "auto",
       "trimThreshold": 1,

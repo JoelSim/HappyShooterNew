@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "37a8c1b3-9308-4606-ba69-bdea8c9f2ce9",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "FullScreen_Button": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "8c67a25a-859e-4389-b8ec-c7f3265cb44f",
+      "importer": "sprite-frame",
       "rawTextureUuid": "37a8c1b3-9308-4606-ba69-bdea8c9f2ce9",
       "trimType": "auto",
       "trimThreshold": 1,

@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.7",
   "uuid": "5d4f06a5-4ea9-4394-a432-3da0337e8aa7",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "yippi_failed": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "cab2bb0b-aaed-412b-bf6b-5555dccebd6a",
+      "importer": "sprite-frame",
       "rawTextureUuid": "5d4f06a5-4ea9-4394-a432-3da0337e8aa7",
       "trimType": "auto",
       "trimThreshold": 1,
