@@ -185,7 +185,7 @@ cc.Class({
         cc.audioEngine.stopMusic(this.musicBG);
         //global.setSceneToLoad("LevelSelection")
         global.setSceneToLoad("MainScene")
-        cc.director.loadScene("Loading");
+        cc.director.loadScene("MainScene");
     },
 
     playButtonSound(){
