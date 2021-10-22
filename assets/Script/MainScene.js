@@ -2,6 +2,7 @@ import * as global from "GlobalVar";
 import * as constant from "Constant";
 import * as globalData from "GlobalData";
 import * as gameLibUtils from "GameLibUtils";
+import * as ecrypt from "ecrypt";
 
 cc.Class({
     extends: cc.Component,
@@ -1630,7 +1631,7 @@ cc.Class({
 
                     };
                     if(globalData.isEncrypt){
-                        emit_result = btoa(JSON.stringify(emit_result));
+                        emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
                     }
                     globalData.getSocket().emit('send-result', emit_result);
                     this.generatingBalance = true;
@@ -1699,7 +1700,7 @@ cc.Class({
             cc.log(globalData.game_code);
             cc.log(globalData.settings.user_id);
             if(globalData.isEncrypt){
-                emit_result = btoa(JSON.stringify(emit_result));
+                emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
             }
             globalData.getSocket().emit('send-result', emit_result);
         }
@@ -2681,7 +2682,7 @@ cc.Class({
                         if( this.gamestate !=constant.getGameStates("gameover"))
                         {
                             if(globalData.isEncrypt){
-                                emit_obj = btoa(JSON.stringify(emit_obj));
+                                emit_obj = ecrypt.encrypt(JSON.stringify(emit_obj));
                             }
                             globalData.getSocket().emit('changeBet', emit_obj);
                             this.generateScore2(true);

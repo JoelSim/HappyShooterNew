@@ -6,6 +6,8 @@
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 import * as globalData from "GlobalData";
 import * as constant from "Constant";
+import * as ecrypt from "ecrypt";
+
 cc.Class({
     extends: cc.Component,
 
@@ -249,7 +251,7 @@ cc.Class({
                             'is_refund':1,
                         };
                         if(globalData.isEncrypt){
-                            emit_result = btoa(JSON.stringify(emit_result));
+                            emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
                         }
                         globalData.getSocket().emit('send-result', emit_result);
                         this.generatingBalance = true;
@@ -278,7 +280,7 @@ cc.Class({
                             "requestType": "bet",
                         }
                         if(globalData.isEncrypt){
-                            emit_obj = btoa(JSON.stringify(emit_obj));
+                            emit_obj = ecrypt.encrypt(JSON.stringify(emit_obj));
                         }
                         globalData.getSocket().emit('changeBet', emit_obj);
                         this.updateSlotAmount();
@@ -381,7 +383,7 @@ cc.Class({
                         'is_refund':1,
                     };
                     if(globalData.isEncrypt){
-                        emit_result = btoa(JSON.stringify(emit_result));
+                        emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
                     }
                     globalData.getSocket().emit('send-result', emit_result);
                 }
@@ -441,7 +443,7 @@ cc.Class({
             };
             if (this.mainGame.getComponent("MainScene").selfClickEnd) {
                 if(globalData.isEncrypt){
-                    emit_result = btoa(JSON.stringify(emit_result));
+                    emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
                 }
                 globalData.getSocket().emit('send-result', emit_result);
             }
@@ -474,7 +476,7 @@ cc.Class({
                         'ticket_id': globalData.ticket_id,
                     }
                     if(globalData.isEncrypt){
-                        emit_obj = btoa(JSON.stringify(emit_obj));
+                        emit_obj = ecrypt.encrypt(JSON.stringify(emit_obj));
                     }
                     globalData.getSocket().emit('changeBet', emit_obj);
                     this.updateSlotAmount();

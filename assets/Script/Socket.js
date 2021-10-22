@@ -1,6 +1,6 @@
 import * as global from "GlobalData";
 import * as constant from "Constant";
-// import * as ecrypt from "ecrypt";
+import * as ecrypt from "ecrypt";
 
 cc.Class({
     extends: cc.Component,
@@ -37,12 +37,12 @@ cc.Class({
     //#region Encryption
     decode(data){
         // convert from base64 and return object in string
-        return atob(data);
+        return ecrypt.decrypt(data);
     },
 
     encode(data){
         // convert string object to base64 string and return the string
-        return btoa(data);
+        return ecrypt.encrypt(data);
     },
 
     socketReceiveAction(data){
@@ -111,30 +111,18 @@ cc.Class({
                 global.setSocket(tempSocket);
             }
         }
-
-        cc.log("XXXXXXXXXXXXXXXXXXXXXXx")
-        cc.log('check 1', global.getSocket().connected);
-        // if(!cc.sys.isNative){
-        global.getSocket().on('connect', function() {
-            cc.log("Socket Connected");
-            cc.log('check 2', global.getSocket().connected);
-            var emit_obj = {
-            };
-
-            // emit_obj = ecrypt.encrypt(JSON.stringify(emit_obj));
-            global.getSocket().emit("subscribe",emit_obj);
-
-        });
+        
         self.listenEvent();
-        // }
-        // this.getComponent("MainMenu").load_layer.active = false;
-
-        // this.getComponent("MainMenu").initializeVariable();
     },
 
     listenEvent: function(){
         cc.log("Listen Event");
         var self = this;
+
+        global.getSocket().on('connect', function() {
+            cc.log("Socket Connected");
+        });
+
         global.getSocket().on('balance', function(data){
             data = self.socketReceiveAction(data);
 
@@ -166,34 +154,10 @@ cc.Class({
             global.playerBalance = data.after_balance;
         });
 
-        global.getSocket().on('onSubscribeDone', function(data){
-            // data = self.parseDataFormat(data);
-            // var resp = ecrypt.decrypt(data);
-            // resp = self.parseDataFormat(resp);
-            // // cc.log(resp.data.session_id);
-            // if(resp.status_code == 0){
-            //     global.setSessionId(resp.data.session_id);
-            //     //global.setBalance(resp.data.trial_remain);
-            //     // self.getComponent("uiController").hideErrorMessage();
-            //     // self.getComponent("uiController").setGameRdy();
-            // }else{
-            //     // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
-            // }
-        });
-
         global.getSocket().on('kick-user-maintenance', function(data){
-            // // data = self.parseDataFormat(data);
-            // // var resp = data;
-            // data = self.parseDataFormat(data);
-            // var resp = ecrypt.decrypt(data);
-            // resp = self.parseDataFormat(resp);
-            // cc.log(resp);
-
-            // self.getComponent("uiController").showErrorMessage(commonErrorMessage[URL.lang][resp.status_code], true);
         });
 
         global.getSocket().on('kick-user', function(data){
-            cc.log("??");
             data = self.socketReceiveAction(data);
 
             global.isKicked = true;
