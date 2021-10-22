@@ -2005,34 +2005,34 @@ cc.Class({
         cc.sys.garbageCollect();
     },
 
-    generatePath: function (valueX,value) {
+    generatePath: function (valueX, value) {
         var path;
-        if(value == true){
-        if(this.currentPath>=this.pathToIn.length){
-            path = 4;
+        if (value == true) {
+            if (this.currentPath >= this.pathToIn.length) {
+                path = 4;
+            }
+            else {
+                path = this.pathToIn[this.currentPath];
+            }
+            cc.log("this.pathToIn:", this.pathToIn);
+            this.currentPath++;
         }
-        else{
-            path = this.pathToIn[this.currentPath];
-        }
-        cc.log(this.currentPath+"-----------"+this.pathToIn.length )
-        this.currentPath++;
-        }
-        else{
-         path = parseInt(Math.random() * (4 + 1 - 0) + 0);
+        else {
+            path = parseInt(Math.random() * (4 + 1 - 0) + 0); // 0(inclusive) - 5(exclusive)
         }
         this.ballInSlotCount[path] = this.ballInSlotCount[path] + 1;
         this.addTotalCredit(path);
         return parseInt(Math.random() * ((this.slotsOriginPosition[path] + 50) + 1 - (this.slotsOriginPosition[path] - 50)) + (this.slotsOriginPosition[path] - 50));
     },
 
-    generateJackpotPath: function (valueX,value) {
+    generateJackpotPath: function (valueX, value) {
         var path;
-        if(value == true){
-        path =  this.pathToIn[this.currentPath];
-        this.currentPath++;
+        if (value == true) {
+            path = this.pathToIn[this.currentPath];
+            this.currentPath++;
         }
-        else{
-         path = parseInt(Math.random() * (4 + 1 - 0) + 0);
+        else {
+            path = parseInt(Math.random() * (4 + 1 - 0) + 0);
         }
         this.ballInSlotCount[path] = this.ballInSlotCount[path] + 1;
         this.addTotalCredit(path);
@@ -2094,8 +2094,8 @@ cc.Class({
             conCheck=10;
         }
         var bigWeightage = globalData.happyShooter.bigWeightage[landSlot]
-        var randomNumber = globalData.happyShooter.totalWeight[landSlot];
-
+        var maxNumber = globalData.happyShooter.totalWeight[landSlot];
+        var minNumber = 1;
 
         var tempArray = [];
         var slotArray = this.inGameBetting.getComponent("InGameBetting").returnSlotAmountArray();
@@ -2103,7 +2103,7 @@ cc.Class({
         for (var i = 0; i < numberOfBallHit; i++) {
             var repeat=true;
             while(repeat){
-                var payOutRange = parseInt(Math.random() * (randomNumber - 1) + 1);
+                var payOutRange = (Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber); //parseInt(Math.random() * (randomNumber - 1) + 1);
                 if (this.ballcheck <= conCheck) {
                     if (payOutRange <= bigWeightage[0]) {
                         if(globalData.maxWin>=slotArray[2]){
@@ -2148,7 +2148,6 @@ cc.Class({
             }
         }
         return tempArray;
-
     },
 
    
@@ -2297,7 +2296,6 @@ cc.Class({
                         if (self.floatingclusters[count1] != null && self.floatingclusters[count1][count2] != null) {
                             // self.currentPath =0;
                             self.currentClusterAdd++;
-                            // self.pathToIn = self.calculateBallToIn(true);
 
                             delayRemoveItem(self.floatingclusters[count1][count2].x, self.floatingclusters[count1][count2].y);
                         } else {
@@ -2316,7 +2314,6 @@ cc.Class({
                         if (self.floatingclusters.length > 0) {
                             // self.currentPath =0;
                             self.currentClusterAdd++;
-                            // self.pathToIn = self.calculateBallToIn(true);
                             delayRemoveItem(self.floatingclusters[count1][count2].x, self.floatingclusters[count1][count2].y);
                         } else {
                             cc.log("no floating cluster");
