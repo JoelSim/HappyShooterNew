@@ -1588,7 +1588,6 @@ cc.Class({
         if (this.cluster.length >= 3 || levelTile == 6) {
             this.bubblePopCount = this.bubblePopCount + this.cluster.length;
             if (levelTile == 6) {
-                // this.isJackPot = false;
                 this.switchBtn.interactable = true;
 
             }

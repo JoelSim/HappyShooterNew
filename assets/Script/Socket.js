@@ -1,6 +1,7 @@
 import * as global from "GlobalData";
 import * as constant from "Constant";
 import * as ecrypt from "ecrypt";
+var MobileDetect = require('mobile-detect');
 
 cc.Class({
     extends: cc.Component,
@@ -32,6 +33,7 @@ cc.Class({
             global.setLang("en");
             URL.lang = "en";
         }
+        this.mobileDetect = new MobileDetect(window.navigator.userAgent);
     },
 
     //#region Encryption
@@ -121,6 +123,27 @@ cc.Class({
 
         global.getSocket().on('connect', function() {
             cc.log("Socket Connected");
+            if(global.isDemo) return;
+            var body = {
+                "username": global.settings.username,
+                "access_token": global.access_token,
+                "game_code": global.game_code,
+                "api_url": global.api_url,
+                "host_id": global.host_id,
+                "user_id": global.settings.user_id,
+                "device_type": self.getDeviceType(),
+                "browser_type": self.getBrowserType(),
+                "os_version": self.getOSversion(),
+                "os_type": self.getOSType(),
+                "h5_app": global.h5_app,
+                "phone_model": self.getPhoneModel(),
+                "user_agent": self.getUserAgent(),
+            };
+            if (global.isEncrypt) {
+                global.getSocket().emit('subscribe', self.encode(JSON.stringify(body)));
+            } else {
+                global.getSocket().emit('subscribe', body);
+            }
         });
 
         global.getSocket().on('balance', function(data){
@@ -157,11 +180,11 @@ cc.Class({
         global.getSocket().on('kick-user-maintenance', function(data){
         });
 
-        global.getSocket().on('kick-user', function(data){
+        global.getSocket().on('kickUser', function(data){
             data = self.socketReceiveAction(data);
 
-            global.isKicked = true;
-            global.kickMessage = data.message;
+            // global.isKicked = true;
+            global.kickMessage = "You have exceeded daily profit limit.";
         });
     },
 
@@ -175,5 +198,61 @@ cc.Class({
         global.getSocket().removeEventListener("kick-user");
     },
 
-    
+    //#region Get Device Info Functions
+    getDeviceType()
+    {
+        if(cc.sys.isMobile)
+        {
+            return 1;
+        }else if (this.mobileDetect.tablet()!=null)
+        {
+            return 2;
+        }else
+        {
+            return 0;
+        }
+    },
+    getBrowserType()
+    {
+        return cc.sys.browserType + " : " + cc.sys.browserVersion;
+    },
+    getOSversion()
+    {
+        return cc.sys.osVersion;
+    },
+    getOSType()
+    {
+        switch(cc.sys.os)
+        {
+            case "OS X":
+                return 3;
+            case "Android":
+                return 0;
+            case "Windows":
+                return 2;
+            case "Linux":
+                return 4;
+            case "iOS":
+                return 1;
+            default:
+                return 99;
+        }
+        
+    },
+    getPhoneModel()
+    {
+        if(this.mobileDetect.phone()==null)
+        {
+            return "Desktop";
+        }else
+        {
+            return this.mobileDetect.phone();
+        }
+        
+    },
+    getUserAgent()
+    {
+        return window.navigator.userAgent;
+    },
+    //#endregion 
 });

@@ -73,6 +73,8 @@ cc.Class({
 	getSettings(){
 		global.host_id = this.getParameterByName('host_id');
 		global.access_token = this.getParameterByName('access_token');
+		global.is_promotion = this.getParameterByName('is_promotion');
+		global.h5_app = this.getH5App();
 
 		let xhr = new XMLHttpRequest();
 		var self = this;
@@ -91,8 +93,8 @@ cc.Class({
 						if(!global.getSocket()){
 							self.getComponent("Socket").connectSocket();
 						}
+						self.getErrorMessage();
 					}
-				
 				};
 			}
 			else{
@@ -137,6 +139,7 @@ cc.Class({
 					if(!global.getSocket()){
 						self.getComponent("Socket").connectSocket();
 					}
+					self.getErrorMessage();
 					if(global.settings==undefined){
 						self.errorLayer.active = true;
 						self.errorLabel.string = parsed.error.message;
@@ -169,9 +172,12 @@ cc.Class({
 				global.api_url=apiURL;
 			}
 
-			let url = apiURL + "/api/user/get-settings?host_id="+global.host_id+"&access_token="+global.access_token+"&game_code=26";
-			// let url = "https://bo.slot28.com/api/user/get-settings?host_id="+global.host_id+"&access_token="+global.access_token+"&game_code=26";
-			// let url = "https://bo-stage-apl.velachip.com/api/user/get-settings?host_id=0e83088027d4c42c8e9934388480c996&access_token=demo04&game_code=26";
+			let url = apiURL + "/api/user/get-settings?host_id="+global.host_id+
+			"&access_token="+global.access_token+
+			"&game_code="+global.game_code+
+			"&is_promotion=" + global.is_promotion + 
+            "&h5_app=" + global.h5_app;
+
 			xhr.open("POST", url, true);
 			xhr.setRequestHeader("Content-Type", "application/json");
 			xhr.setRequestHeader("Accept-Language", "en-US");
@@ -189,5 +195,22 @@ cc.Class({
 
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 	},
-	// update (dt) {},
+	getH5App()
+    {
+        let h5_app = this.getParameterByName('h5_app', undefined);
+        if(h5_app == null || h5_app == "")
+        {
+            return 99;
+        }
+        return h5_app;
+    },
+	getErrorMessage(){
+        let url = global.settings.dynamic_assets_url + '/errorMessage.json'; 
+        cc.loader.load(url, function(err, info){
+            if(!err){
+                global.commonErrorMessage = info;
+                cc.log("getErrorMessage:", global.commonErrorMessage);
+            }
+        });
+    },
 });

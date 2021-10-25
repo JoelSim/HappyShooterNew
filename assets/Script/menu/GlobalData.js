@@ -10,6 +10,8 @@ var lang = "en";
 var apiURL= "http://tca-test.togacapital.com";
 export var host_id = 0;
 export var access_token =0;
+export var h5_app = null;
+export var is_promotion = null;
 // var apiURL= "http://api.tclub.biz";
 var loginURL = "/member/findMember?";
 var scoreURL = "/member/saveScore?";
@@ -44,12 +46,12 @@ export var settings = {
 
 export var game_code = 26;
 
-export var ticket_id = -1;
+export var ticket_id = null;
 export var errorMessage = "";
 export var isEncrypt = true;
 export var isKicked = false;
 export var kickMessage = "";
-
+export var commonErrorMessage =  null;
 var socket = null;
 export function getSocket(){
     return socket;

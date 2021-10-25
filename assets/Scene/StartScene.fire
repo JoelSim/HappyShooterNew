@@ -530,15 +530,15 @@
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -405,
-        -910,
+        -520,
+        -920,
         0,
         0,
         0,
@@ -577,8 +577,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "11111",
-    "_N$string": "11111",
+    "_string": "v0.0.0",
+    "_N$string": "v0.0.0",
     "_fontSize": 60,
     "_lineHeight": 60,
     "_enableWrapText": true,
