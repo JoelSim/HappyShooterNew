@@ -183,7 +183,7 @@ cc.Class({
         global.getSocket().on('kickUser', function(data){
             data = self.socketReceiveAction(data);
 
-            // global.isKicked = true;
+            global.isKicked = true;
             global.kickMessage = "You have exceeded daily profit limit.";
         });
     },
