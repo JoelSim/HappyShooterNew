@@ -2155,7 +2155,84 @@ cc.Class({
         // 4 = x0
     },
 
-   
+    calculateBallToInNew(value){
+        let numberOfBallHit = this.floatingclusters.length;
+        if(value){
+            numberOfBallHit = this.cluster.length + this.currentClusterAdd;
+        }
+        let numberOfBallCalculate = 0;
+        let landSlot = 0;
+    
+        if(this.isJackPot){
+            numberOfBallCalculate = 10;
+            landSlot = 7;
+            numberOfBallHit += 7;
+        }
+        else{
+            switch(numberOfBallHit){
+                case 3:
+                    numberOfBallCalculate = 3;
+                    landSlot = 0;
+                    break;
+                case 4:
+                    numberOfBallCalculate = 4;
+                    landSlot = 1;
+                    break;
+                case 5:
+                    numberOfBallCalculate = 5;
+                    landSlot = 2;
+                    break;
+                case 6:
+                    numberOfBallCalculate = 6;
+                    landSlot = 3;
+                    break;
+                case 7:
+                    numberOfBallCalculate = 7;
+                    landSlot = 4;
+                    break;
+                case 8:
+                    numberOfBallCalculate = 8;
+                    landSlot = 5;
+                    break;
+            }
+            if(numberOfBallHit >= 9){
+                landSlot = 6;
+                numberOfBallCalculate = 9;
+            }
+        }
+    
+        let bigWeightage = happyShooter.bigWeightage[landSlot]
+        let maxNumber = happyShooter.totalWeight[landSlot];
+        let minNumber = 1;
+        let tempArray = [];
+    
+        for (let i = 0; i < numberOfBallHit; i++){
+            if(i < numberOfBallCalculate){
+                let random = (Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber); //parseInt(Math.random() * (randomNumber - 1) + 1);
+                if(random <= bigWeightage[0]){
+                    tempArray.push(2);
+                }
+                else if(random <= bigWeightage[1]){
+                    tempArray.push(3);
+                }
+                else if(random <= bigWeightage[2]){
+                    tempArray.push(1);
+                }
+                else if(random <= bigWeightage[3]){
+                    tempArray.push(0);
+                }
+            }
+            else{
+                tempArray.push(4);
+            }
+        }
+        return tempArray;
+        // 0 = x0.05
+        // 1 = x0.15
+        // 2 = x0.5
+        // 3 = x0.25
+        // 4 = x0
+    },
 
     addTotalCredit(value) {
         this.total_add = this.total_add + this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(value);
@@ -2200,7 +2277,7 @@ cc.Class({
         this.ballcheck=0;
         this.currentClusterAdd=0;
         this.scheduleOnce(function(){
-            this.pathToIn = this.calculateBallToIn(true);
+            this.pathToIn = this.calculateBallToInNew(true);
         },1);
 
 
