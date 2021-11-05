@@ -2201,8 +2201,8 @@ cc.Class({
             }
         }
     
-        let bigWeightage = happyShooter.bigWeightage[landSlot]
-        let maxNumber = happyShooter.totalWeight[landSlot];
+        let bigWeightage = globalData.happyShooter.bigWeightage[landSlot]
+        let maxNumber = globalData.happyShooter.totalWeight[landSlot];
         let minNumber = 1;
         let tempArray = [];
     
