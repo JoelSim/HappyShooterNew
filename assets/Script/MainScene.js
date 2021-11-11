@@ -643,6 +643,9 @@ cc.Class({
             this.musicToggle.isChecked = false;
         }
         //this.adjustCamera(500);
+        
+        this.versionLabel = cc.find("Canvas/version");
+        this.versionLabel.getComponent(cc.Label).string = constant.getVersion();
     },
 
     updateCredit() {
@@ -2201,8 +2204,8 @@ cc.Class({
             }
         }
     
-        let bigWeightage = happyShooter.bigWeightage[landSlot]
-        let maxNumber = happyShooter.totalWeight[landSlot];
+        let bigWeightage = globalData.happyShooter.bigWeightage[landSlot]
+        let maxNumber = globalData.happyShooter.totalWeight[landSlot];
         let minNumber = 1;
         let tempArray = [];
     
