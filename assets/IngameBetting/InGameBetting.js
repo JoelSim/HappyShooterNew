@@ -249,6 +249,7 @@ cc.Class({
                             'api_url':globalData.api_url,
                             'changeBet':true,
                             'is_refund':1,
+                            'is_angpao': 0,
                         };
                         if(globalData.isEncrypt){
                             emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
@@ -381,6 +382,7 @@ cc.Class({
                         'api_url':globalData.api_url,
                         'changeBet':true,
                         'is_refund':1,
+                        'is_angpao': 0,
                     };
                     if(globalData.isEncrypt){
                         emit_result = ecrypt.encrypt(JSON.stringify(emit_result));
@@ -440,6 +442,7 @@ cc.Class({
                 'api_url':globalData.api_url,
                 'changeBet':true,
                 'is_refund': 1,
+                'is_angpao': 0,
             };
             if (this.mainGame.getComponent("MainScene").selfClickEnd) {
                 if(globalData.isEncrypt){
