@@ -124,6 +124,7 @@ cc.Class({
             cc.log(audio);
             self.musicBG = audio;
             cc.audioEngine.playMusic(self.musicBG,true);
+            cc.audioEngine.setMusicVolume(global.getEffectVolume() / 6);
         });
         this.load_layer = cc.find("Canvas/load_layer");
         this.versionLabel = cc.find("Canvas/version");
@@ -170,7 +171,7 @@ cc.Class({
         if(global.getSound() == 0 ){
             cc.audioEngine.setVolume(this.effect_id2, 0.0);
         }else if(volume != null){
-            cc.audioEngine.setVolume(this.effect_id2, volume);
+            cc.audioEngine.setVolume(this.effect_id2, volume / 6);
         }
         return this.effect_id2;
     },
@@ -194,7 +195,7 @@ cc.Class({
     toggleMute(){
         if(this.musicToggle.isChecked){
             global.setSound(1);        
-            cc.audioEngine.setMusicVolume(0.5);
+            cc.audioEngine.setMusicVolume(global.getEffectVolume() / 6);
             global.setEffectVolume(1);
 
 

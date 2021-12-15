@@ -337,6 +337,7 @@ cc.Class({
         var self = this;
         this.ctx = this.node.getComponent(cc.Graphics);
         this.mainSceneBgm = cc.audioEngine.playMusic(this.bgm, true);
+        cc.audioEngine.setMusicVolume(globalData.getEffectVolume() / 6);
 
         if (cc.sys.isMobile) {
             cc.view.resizeWithBrowserSize(true);
@@ -2566,7 +2567,7 @@ cc.Class({
         if (globalData.getSound() == 0) {
             cc.audioEngine.setVolume(this.effect_id2, 0.0);
         } else if (volume != null) {
-            cc.audioEngine.setVolume(this.effect_id2, volume);
+            cc.audioEngine.setVolume(this.effect_id2, volume / 6);
         }
         return this.effect_id2;
     },

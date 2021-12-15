@@ -173,6 +173,7 @@ cc.Class({
             cc.log(audio);
             self.musicBG = audio;
             cc.audioEngine.playMusic(self.musicBG,true);
+			cc.audioEngine.setMusicVolume(global.getEffectVolume() / 6);
         });
         cc.loader.loadRes("Audio/button_click", function(err,audio){
             cc.log(audio);
@@ -281,7 +282,7 @@ cc.Class({
 		if(global.getSound() == 0 ){
 			cc.audioEngine.setVolume(this.effect_id2, 0.0);
 		}else if(volume != null){
-			cc.audioEngine.setVolume(this.effect_id2, volume);
+			cc.audioEngine.setVolume(this.effect_id2, volume / 6);
 		}
 		return this.effect_id2;
 	},
@@ -339,7 +340,7 @@ cc.Class({
 	onBgValueChange(){
 		cc.log(this.music_slider.progress);
 		global.setBgVolume(this.music_slider.progress);
-		cc.audioEngine.setMusicVolume(this.music_slider.progress)
+		cc.audioEngine.setMusicVolume(this.music_slider.progress / 6);
 	},
 
 	selectLanguage(event, value){
