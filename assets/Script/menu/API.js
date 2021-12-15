@@ -49,6 +49,10 @@ cc.Class({
 			type:cc.Node,	
 		},
 
+		betSelectionNode:{
+			default:null,
+			type:cc.Node
+		},
 	},
 
 	startGuestMode() {
@@ -89,11 +93,13 @@ cc.Class({
 						var parsed = JSON.parse(response);
 		
 						global.settings = parsed.data;
+						cc.log(global.settings);
 						constant.setSocketURL(global.settings.socket_url);
 						if(!global.getSocket()){
 							self.getComponent("Socket").connectSocket();
 						}
 						self.getErrorMessage();
+						self.betSelectionNode.getComponent("BetSelection").setOptionsAmount(global.settings);
 					}
 				};
 			}
@@ -134,12 +140,15 @@ cc.Class({
 					var parsed = JSON.parse(response);
 	
 					global.settings = parsed.data;
+					cc.log(global.settings);
 					// global.setSettings(parsed.data);
 					constant.setSocketURL(global.settings.socket_url);
 					if(!global.getSocket()){
 						self.getComponent("Socket").connectSocket();
 					}
 					self.getErrorMessage();
+					self.betSelectionNode.getComponent("BetSelection").setOptionsAmount(global.settings);
+
 					if(global.settings==undefined){
 						self.errorLayer.active = true;
 						self.errorLabel.string = parsed.error.message;

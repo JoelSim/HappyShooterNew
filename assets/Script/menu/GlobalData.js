@@ -84,6 +84,9 @@ var bg_volume = 1.0;
 
 var coin = 100;
 
+export var configBetRange = [2,4,6,8];
+export var configBetAmount = [2,4,6,8,10];
+
 var betSelection =0;
 
 export function getBetSelection(){

@@ -599,7 +599,6 @@ cc.Class({
 
                 if (self.gamestate == constant.getGameStates("ready")) {
                     // Set the gamestate
-                    // globalData.settings.balance=globalData.settings.balance - self.inGameBetting.getComponent("InGameBetting").currentBetting;
                     self.total_bet = self.total_bet + self.inGameBetting.getComponent("InGameBetting").currentBetting;
                     self.panda.getComponent(cc.Animation).play("pandaShoot");
                     self.dragon.getComponent(cc.Animation).play("dragonShooting");
@@ -2805,7 +2804,6 @@ cc.Class({
         if (this.gamestate == constant.getGameStates("ready")) {
             // Set the gamestate
             if (!this.insufficient.active) {
-               // globalData.settings.balance=globalData.settings.balance- this.inGameBetting.getComponent("InGameBetting").currentBetting;
                 this.total_bet = this.total_bet + this.inGameBetting.getComponent("InGameBetting").currentBetting;
                 this.panda.getComponent(cc.Animation).play("pandaShoot");
                 this.dragon.getComponent(cc.Animation).play("dragonShooting");
@@ -2931,19 +2929,11 @@ cc.Class({
     },
 
     generateScore(){
-        // this.maxWin = this.inGameBetting.getComponent("InGameBetting").currentBetting * (Math.random() * (1.5 - 0.7) + 0.7);
         this.loadingLayer.active = false;
         this.updateCredit();
         if( this.render){
             this.renderPlayer(0);
         }
-
-        // if(globalData.settings.balance>=this.inGameBetting.getComponent("InGameBetting").currentBetting){
-        //     this.insufficient.active=false;
-        // }
-        // else{
-        //     this.insufficient.active=true;
-        // }
         this.maxWinLable.string = "Max Win Score:  " + Math.round(globalData.maxWin*10)/10;
 
     },
