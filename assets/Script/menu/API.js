@@ -121,7 +121,7 @@ cc.Class({
 			if (global.api_url == undefined) {
 				apiURL = "https://bo-stage.apollogames.co";
 				if (global.isProduction) {
-					apiURL = "https://bo.slot28.com";
+					apiURL = "https://bo.apollogames.co";
 				}
 
 				global.api_url=apiURL;
@@ -176,7 +176,7 @@ cc.Class({
 			if (global.api_url == undefined) {
 				apiURL = "https://bo-stage.apollogames.co";
 				if (global.isProduction) {
-					apiURL = "https://bo.slot28.com";
+					apiURL = "https://bo.apollogames.co";
 				}
 				global.api_url=apiURL;
 			}
