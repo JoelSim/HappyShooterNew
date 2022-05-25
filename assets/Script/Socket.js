@@ -166,6 +166,7 @@ cc.Class({
             global.ticket_id = data.ticket_id;
             global.settings.balance = data.balance;
             global.maxWin = data.score;
+            global.maxMultiplier = data.maxMultiplier;
             global.jackpot = data.jackpot;
             global.finishGetData = true;
         });

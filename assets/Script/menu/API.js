@@ -85,6 +85,7 @@ cc.Class({
 
 		if(global.host_id==null && global.access_token==null){
 			if(!global.isDemo){
+				global.isDemo = true;
 				self.errorLayer.active = true;
 				self.errorLabel.string=" You Are Playing For Fun.";
 				xhr.onreadystatechange = function(){

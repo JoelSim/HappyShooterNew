@@ -232,6 +232,8 @@ cc.Class({
                         globalData.settings.balance+=this.lastBetting;
                         this.generatingBalance = true;
                     }
+                    globalData.previousBet = this.lastBetting;
+                    globalData.previousWin = this.lastBetting;
                     this.mainGame.getComponent("MainScene").resetAWB();
 
                 }
@@ -299,8 +301,8 @@ cc.Class({
         this.slotPrize.push(0);
     },
 
-    returnSlotAmount(value) {
-        return this.slotPrize[value];
+    returnSlotAmount(index) {
+        return this.slotPrize[index];
     },
 
     returnSlotAmountArray() {
@@ -355,6 +357,8 @@ cc.Class({
                 else{
                     globalData.settings.balance +=this.lastBetting;
                 }
+                globalData.previousBet = this.lastBetting;
+                globalData.previousWin = this.lastBetting;
                 this.mainGame.getComponent("MainScene").resetAWB();
                 this.lastBetting = this.currentBetting;
                 this.generatingBalance = true;
@@ -419,6 +423,8 @@ cc.Class({
                 globalData.settings.balance += this.lastBetting;
             }
         }
+        globalData.previousBet = this.lastBetting;
+        globalData.previousWin = this.lastBetting;
     },
 
 

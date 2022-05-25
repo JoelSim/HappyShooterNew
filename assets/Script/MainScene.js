@@ -1609,7 +1609,6 @@ cc.Class({
             this.scheduleOnce(function () {
                 this.valueToAdd = 0;
                 this.scoreAnimate = true;
-                cc.log(this.total_add+ "ASJAJSSJAJSAJKSAJLSLDKJLAKD");
                 this.valueToAdd = this.total_add * 1 / this.scoreSpeed;
             }, 2);
 
@@ -1643,8 +1642,8 @@ cc.Class({
                     globalData.settings.balance+=this.total_add;
                     this.generatingBalance = true;
                 }
-
-
+                globalData.previousBet = this.inGameBetting.getComponent("InGameBetting").currentBetting;
+                globalData.previousWin = this.total_add;
             }, 2);
 
             this.scheduleOnce(function () {
@@ -1708,6 +1707,8 @@ cc.Class({
         else{
             globalData.settings.balance+=this.total_add;
         }
+        globalData.previousBet = this.inGameBetting.getComponent("InGameBetting").currentBetting;
+        globalData.previousWin = this.total_add;
 
         this.loadingLayer.active = true;
         this.loadingLayer.opacity=0;
@@ -2212,22 +2213,56 @@ cc.Class({
             if(i < numberOfBallCalculate){
                 let random = (Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber); //parseInt(Math.random() * (randomNumber - 1) + 1);
                 if(random <= bigWeightage[0]){
-                    tempArray.push(2);
+                    if(globalData.maxMultiplier >= 0.5){
+                        tempArray.push(2);
+                        globalData.maxMultiplier -= 0.5;
+                    }
+                    else{
+                        tempArray.push(4);
+                    }
                 }
                 else if(random <= bigWeightage[1]){
-                    tempArray.push(3);
+                    if(globalData.maxMultiplier >= 0.25){
+                        tempArray.push(3);
+                        globalData.maxMultiplier -= 0.25;
+                    }
+                    else{
+                        tempArray.push(4);
+                    }
                 }
                 else if(random <= bigWeightage[2]){
-                    tempArray.push(1);
+                    if(globalData.maxMultiplier >= 0.15){
+                        tempArray.push(1);
+                        globalData.maxMultiplier -= 0.15;
+                    }
+                    else{
+                        tempArray.push(4);
+                    }
                 }
                 else if(random <= bigWeightage[3]){
-                    tempArray.push(0);
+                    if(globalData.maxMultiplier >= 0.05){
+                        tempArray.push(0);
+                        globalData.maxMultiplier -= 0.05;
+                    }
+                    else{
+                        tempArray.push(4);
+                    }
                 }
             }
             else{
                 tempArray.push(4);
             }
         }
+        let bonus = 0;
+        if(globalData.previousWin == 0 && globalData.previousBet > 0){
+            let maxBonus = this.inGameBetting.getComponent("InGameBetting").currentBetting * globalData.maxMultiplier;
+            bonus = globalData.previousBet;
+            if(bonus > maxBonus){
+                bonus = maxBonus;
+            }
+            bonus = Math.round(bonus * 100) / 100;
+        }
+        this.addBonusCredit(bonus);
         return tempArray;
         // 0 = x0.05
         // 1 = x0.15
@@ -2236,16 +2271,23 @@ cc.Class({
         // 4 = x0
     },
 
-    addTotalCredit(value) {
-        this.total_add = this.total_add + this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(value);
+    addTotalCredit(index) {
+        this.total_add += this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(index);
 
-        if (this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(value) != 0) {
-            this.addScoreEffect(-296.056, 750.518, this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(value), this.delayTime);
+        if (this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(index) != 0) {
+            this.addScoreEffect(-296.056, 750.518, this.inGameBetting.getComponent("InGameBetting").returnSlotAmount(index), this.delayTime);
             this.delayTime = this.delayTime + 0.2;
         }
         this.updateBallInSlot();
         //this.finalWin = this.finalWin+ this.total_add;
 
+    },
+    addBonusCredit(value){
+        this.total_add += value;
+        if (value != 0) {
+            this.addScoreEffect(-296.056, 750.518, value, this.delayTime);
+            this.delayTime = this.delayTime + 0.2;
+        }
     },
 
 
@@ -2954,6 +2996,7 @@ cc.Class({
 
         var jackpot = 5 * this.inGameBetting.getComponent("InGameBetting").currentBetting;
         var score = 5 * this.inGameBetting.getComponent("InGameBetting").currentBetting;
+        globalData.maxMultiplier = 5;
 
         this.isGenerating = true;
         globalData.maxWin = score;
