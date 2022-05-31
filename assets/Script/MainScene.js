@@ -2101,14 +2101,14 @@ cc.Class({
             }
         }
     
-        let bigWeightage = globalData.happyShooter.bigWeightage[landSlot]
+        let bigWeightage = globalData.happyShooter.bigWeightage[landSlot];
         let maxNumber = globalData.happyShooter.totalWeight[landSlot];
         let minNumber = 1;
         let tempArray = [];
     
         for (let i = 0; i < numberOfBallHit; i++){
             if(i < numberOfBallCalculate){
-                let random = (Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber); //parseInt(Math.random() * (randomNumber - 1) + 1);
+                let random = Math.trunc(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
                 if(random <= bigWeightage[0]){
                     if(globalData.maxMultiplier >= 0.5){
                         tempArray.push(2);

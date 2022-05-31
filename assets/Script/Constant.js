@@ -1,4 +1,4 @@
-var version = "v2.2.8";
+var version = "v2.2.9";
 var defaultSpeed = 0.5;
 var defaultDistance = 1000;
 

@@ -64,7 +64,7 @@ export function setSocket(value){
 }
 
 export var maxWin = -1;
-export var maxMultiplier = -1
+export var maxMultiplier = 100;
 export var jackpot = -1;
 export var previousBet = 0;
 export var previousWin = 0;
